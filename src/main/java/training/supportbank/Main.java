@@ -1,45 +1,40 @@
 package training.supportbank;
 
-import javax.imageio.IIOException;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Date;
 import java.util.List;
 
 public class Main {
 
 
-    /*class person {
-        String name;
-        BigDecimal balance;
-    }
-
-    class transfer {
-        Date dates;
-        BigDecimal initialbalance;
-        BigDecimal newbalance;
-
-    }*/
-
-    public static void main(String args[]) {
-
+    public static void main(String args[]) throws IOException {
 
         List<String> transactions = Files.readAllLines(Paths.get("Transactions2014.csv"), Charset.forName("windows-1252"));
 
-        try {
-            List<String> lines = Files.readAllLines(transactions);
-            for (String line : lines) {
-                System.out.println(line);
-            }
-        }catch (IIOException e) {
-            System.out.println(e);
+        for(String seperate: transactions) {
+
+            System.out.println(seperate);
+
+            Person each = new Person();
+
+        /*Person Jon = new Person();
+        Jon.name = "Jon A";
+        Jon.balance = new BigDecimal("7.8");
+
+
+        System.out.println(Jon.name);
+        System.out.println(Jon.balance);*/
+
         }
 
 
 
-        // Your code here!
-        System.out.println("Test!");
+
+
     }
 }
