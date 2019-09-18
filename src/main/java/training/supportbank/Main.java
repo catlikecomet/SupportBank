@@ -14,21 +14,20 @@ public class Main {
 
     public static void main(String args[]) throws IOException {
 
-        List<String> transactions = Files.readAllLines(Paths.get("Transactions2014.csv"), Charset.forName("windows-1252"));
+        List<String> list = Files.readAllLines(Paths.get("Transactions2014.csv"), Charset.forName("windows-1252"));
 
-        for(String seperate: transactions) {
-
-            System.out.println(seperate);
-
-            Person each = new Person();
-
-        /*Person Jon = new Person();
-        Jon.name = "Jon A";
-        Jon.balance = new BigDecimal("7.8");
+        for(int i = 0; i < list.size(); i++) {
+            list.get(i).split((","));
 
 
-        System.out.println(Jon.name);
-        System.out.println(Jon.balance);*/
+
+        Person each = new Person();
+        each.name = list.get(1);
+
+
+
+        System.out.println(each.name);
+
 
         }
 
