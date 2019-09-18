@@ -26,7 +26,7 @@ public class Main {
     public static void main(String args[]) {
 
 
-        Path transactions = Paths.get("Transactions2014.csv");
+        List<String> transactions = Files.readAllLines(Paths.get("Transactions2014.csv"), Charset.forName("windows-1252"));
 
         try {
             List<String> lines = Files.readAllLines(transactions);
