@@ -23,7 +23,7 @@ public class Main {
         ArrayList<Person> people = new ArrayList<Person>();
 
         for(int i = 0; i < line.size(); i++) {
-            System.out.println(people.size());
+            //System.out.println(people.size());
             boolean userExists = false;
             int userIndex;
             String[] items = line.get(i).split(",");
@@ -36,33 +36,21 @@ public class Main {
                 }
 
             }
-                 if (userExists == true){
+                 if (userExists == true) {
 
-
-                 }else {
+                 } else {
                      people.add(new Person(items[1]));
                  }
 
         }
 
+        for (int i = 0; i < people.size();i++){
+            System.out.println(people.get(i).getName());
+        }
+
     }
 }
 
-                /*each.name = items[1];
-
-
-                each.balance = new BigDecimal(items[4]);
-
-                System.out.println(each.name);
-                System.out.println(each.balance);*/
-
-
-
-               /* Transaction eachTransaction = new Transaction();
-                eachTransaction.date = new Date(items[0]);
-                eachTransaction.toName = each.name;
-                eachTransaction.fromName = items[2];
-                eachTransaction.narrative = items[3];*/
 
 
 
