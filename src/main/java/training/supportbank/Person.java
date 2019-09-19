@@ -2,7 +2,7 @@ package training.supportbank;
 
 import java.math.BigDecimal;
 
-public class Person {
+class Person {
         String name;
         BigDecimal balance;
 
