@@ -21,35 +21,50 @@ public class Main {
         List<String> line = Files.readAllLines(Paths.get("Transactions2014.csv"), Charset.forName("windows-1252"));
         line.remove(0);
         ArrayList<Person> people = new ArrayList<Person>();
+        int userIndex = 0;
 
-        for(int i = 0; i < line.size(); i++) {
-            //System.out.println(people.size());
-            boolean userExists = false;
-            int userIndex;
+        for (int i = 0; i < line.size(); i++) {
+
             String[] items = line.get(i).split(",");
 
-            for (int l = 0; l <= people.size() - 1; l++){
 
-                if (people.get(l).getName().equals(items[1])) {
-                    userExists = true;
-                    userIndex = l;
-                }
+            if (checkUserExists(people, items[1])) {
+                people.get(people.size() - 1).getBalance().add(new BigDecimal(items[4]));
+            } else {
+                people.add(new Person(items[1]));
+                people.get(people.size() - 1).changeBalance(new BigDecimal(items[4]));
+
 
             }
-                 if (userExists == true) {
 
-                 } else {
-                     people.add(new Person(items[1]));
-                 }
 
         }
 
-        for (int i = 0; i < people.size();i++){
-            System.out.println(people.get(i).getName());
+        for (int i = 0; i < people.size(); i++) {
+            System.out.println(people.get(i).getName()+" has a balance of: "+people.get(i).getBalance());
+
+
         }
+
 
     }
+
+    private static boolean checkUserExists(ArrayList<Person> people, String userName) {
+        boolean userExists = false;
+        int l;
+        for (l = 0; l <= people.size() - 1; l++) {
+
+            if (people.get(l).getName().equals(userName)) {
+                userExists = true;
+
+
+            }
+        }
+        return userExists;
+    }
 }
+
+
 
 
 
