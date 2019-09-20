@@ -15,6 +15,9 @@ class Person {
         public void changeBalance(BigDecimal value) {
                 balance = value;
         }
+        public void addToBalance(BigDecimal value) {
+                balance.add(value);
+        }
         public BigDecimal getBalance() {
                 return balance;
         }
