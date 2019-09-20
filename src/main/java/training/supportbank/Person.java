@@ -13,10 +13,7 @@ class Person {
                 return name;
         }
         public void changeBalance(BigDecimal value) {
-                balance = value;
-        }
-        public void addToBalance(BigDecimal value) {
-                balance.add(value);
+                balance = value.subtract(balance);
         }
         public BigDecimal getBalance() {
                 return balance;

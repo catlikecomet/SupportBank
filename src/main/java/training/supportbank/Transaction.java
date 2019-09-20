@@ -5,8 +5,8 @@ import java.util.Date;
 
 class Transaction {
     private Date date;
-    private String toName;
-    private String fromName;
+    private String sender;
+    private String receiver;
     private String narrative;
     private BigDecimal amount;
 
@@ -15,12 +15,12 @@ class Transaction {
         return date;
     }
 
-    public String getToName(){
-        return toName;
+    public String getSender(){
+        return sender;
     }
 
-    public String getFromName(){
-        return fromName;
+    public String getReceiver(){
+        return receiver;
     }
 
     public String getNarrative(){

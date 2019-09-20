@@ -20,8 +20,10 @@ public class Main {
         List<String> line = Files.readAllLines(Paths.get("Transactions2014.csv"), Charset.forName("windows-1252"));
         line.remove(0);
         ArrayList<Person> people = new ArrayList<Person>();
+        ArrayList<Transaction> transactions = new ArrayList<Transaction>();
+        ArrayList<String> receivers = new ArrayList<String>();
         int userIndex = 0;
-        int x;
+
 
         for (int i = 0; i < line.size(); i++) {
 
@@ -29,7 +31,6 @@ public class Main {
 
 
             if (checkUserExists(people, items[1])) {
-                //people.get(people.size() - 1).changeBalance(new BigDecimal(people.));
 
 /*
                 //We need to loop backwards through the person record from this point until we get the same name again and then add the value
@@ -49,14 +50,17 @@ public class Main {
                 }
 
 */
-
             } else {
                 people.add(new Person(items[1]));
-                people.get(people.size() - 1).changeBalance(new BigDecimal(items[4]));
-
-
+//
+                //Transaction first = new Transaction();
+                //first.getDate().equals (items[0]);
+                //System.out.println(first);
             }
 
+            for (int x = 0; x<=people.size() - 1;x++ ){
+                people.get(x).changeBalance(new BigDecimal(items[4]));
+            }
 
         }
 
