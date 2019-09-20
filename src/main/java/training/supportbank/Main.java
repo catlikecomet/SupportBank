@@ -31,35 +31,44 @@ public class Main {
 
 
             if (checkUserExists(people, items[1])) {
-
-/*
-                //We need to loop backwards through the person record from this point until we get the same name again and then add the value
-                people.get(people.size() - 1).addToBalance(new BigDecimal(items[4]));
-                for (x = i; x > -1; x--) {
-                    if (x==0) {
-                        break;
-                    }
-                    // Check the persons name and if a match then we have a match
-                    if (people.get(x).getName().contains(items[1])) { // Getting the name of the previous record and comparing for a match
-                        System.out.println("MATCH: " + people.get(x).getName());
-                        // Then get amount from x indexed record and add to current records amount
-                        people.get(x).addToBalance(new BigDecimal(items[4]));
-
-                        break;
-                    }
-                }
-
-*/
+///*
+//                //We need to loop backwards through the person record from this point until we get the same name again and then add the value
+//                people.get(people.size() - 1).addToBalance(new BigDecimal(items[4]));
+//                for (x = i; x > -1; x--) {
+//                    if (x==0) {
+//                        break;
+//                    }
+//                    // Check the persons name and if a match then we have a match
+//                    if (people.get(x).getName().contains(items[1])) { // Getting the name of the previous record and comparing for a match
+//                        System.out.println("MATCH: " + people.get(x).getName());
+//                        // Then get amount from x indexed record and add to current records amount
+//                        people.get(x).addToBalance(new BigDecimal(items[4]));
+//
+//                        break;
+//                    }
+//                }
+//
+//*/          for (int x = 0; x<=people.size() - 1;x++ ){
+//                    people.get(x).changeBalance(new BigDecimal(items[4]));
+//                    }
             } else {
                 people.add(new Person(items[1]));
-//
+//                people.get(people.size()-1).changeBalance(new BigDecimal(items[4]));
+
                 //Transaction first = new Transaction();
                 //first.getDate().equals (items[0]);
                 //System.out.println(first);
             }
 
-            for (int x = 0; x<=people.size() - 1;x++ ){
-                people.get(x).changeBalance(new BigDecimal(items[4]));
+
+            for(int x = 0; x < people.size(); x++){
+                if (people.get(x).getName().equals(items[1])){
+                    people.get(x).subtractBalance(items[4]);
+                }else if (people.get(x).getName().equals(items[2])){
+                    people.get(x).addBalance(items[4]);
+                }
+
+
             }
 
         }

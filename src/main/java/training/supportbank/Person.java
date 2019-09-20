@@ -12,8 +12,13 @@ class Person {
         public String getName(){
                 return name;
         }
-        public void changeBalance(BigDecimal value) {
-                balance = value.subtract(balance);
+        public void subtractBalance(String value) {
+                BigDecimal amount = new BigDecimal(value);
+                balance = amount.subtract(balance);
+        }
+        public void addBalance(String value) {
+                BigDecimal amount = new BigDecimal(value);
+                balance = amount.add(balance);
         }
         public BigDecimal getBalance() {
                 return balance;
