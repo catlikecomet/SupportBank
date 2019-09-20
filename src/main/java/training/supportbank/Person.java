@@ -14,11 +14,11 @@ class Person {
         }
         public void subtractBalance(String value) {
                 BigDecimal amount = new BigDecimal(value);
-                balance = amount.subtract(balance);
+                balance = balance.subtract(amount);
         }
         public void addBalance(String value) {
                 BigDecimal amount = new BigDecimal(value);
-                balance = amount.add(balance);
+                balance = balance.add(amount);
         }
         public BigDecimal getBalance() {
                 return balance;
